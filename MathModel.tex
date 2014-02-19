@@ -7,7 +7,7 @@
 \usepackage{amsmath,amsthm}
 \usepackage{multicol}
 \usepackage{geometry}
-\usepackage[dvips]{graphicx}
+%\usepackage[dvips]{graphicx}
 \usepackage{algorithmic}
 %\usepackage[linesnumbered,boxed]{algorithm2e}
 \usepackage[linesnumbered]{algorithm2e}
@@ -37,13 +37,13 @@
 % \begin{example}
 % В близкие моменты времени зафиксирован выход девайсов A,B,C с одного IP. В этом множестве девайсов возникла (пока слабая) связь. Данная связь усиливается с каждой  фиксацией совместного выхода с одного IP.
 % \end{example}
-time\_stamp - 100\%
+% time\_stamp - 100\%
 
-device\_id - 50\%
+% device\_id - 50\%
 
-IP - 100\%
+% IP - 100\%
 
-location - 30\%
+% location - 30\%
 % \section {Данные для построения}
 % Нормализированная база данных логов.
 % \subsection {Входные данные}
@@ -153,47 +153,101 @@ location - 30\%
 % Классификация аналогична методам распознавания при помощи шаблонов. 
 % $$Classifier: Logs \rightarrow Pattern\_idies$$
 
-\section{Алгоритм}
-$\mathfrak{H}$ - set of households
+% \section{Алгоритм}
+% $\mathfrak{H}$ - set of households
 
-Будем исходить из предположения, что отображение $$f: time\times ip\rightarrow\mathfrak{H}$$ является инъективным.
+% Будем исходить из предположения, что отображение $$f: time\times ip\rightarrow\mathfrak{H}$$ является инъективным.
 
 
-\subsection{Стабилизация координат}
-Выберем базовою величину дискретизации временной прямой(1 час, 6 часов, день и т.д.). Базовой длиной необходимо выбирать величину временного отрезка, для которого, предположительно, изменения ip не происходят. 
+% \subsection{Стабилизация координат}
+% Выберем базовою величину дискретизации временной прямой(1 час, 6 часов, день и т.д.). Базовой длиной необходимо выбирать величину временного отрезка, для которого, предположительно, изменения ip не происходят. 
 
-Разобьем множество логов на базовые блоки - в один блок попадают логи с одинаковым ip, зафиксированные на одном базовом интервале временной прямой.
+% Разобьем множество логов на базовые блоки - в один блок попадают логи с одинаковым ip, зафиксированные на одном базовом интервале временной прямой.
 
- К каждому базовому блоку методом коллаборативной фильтрации привяжем координаты. Поскольку анализ данных показывает недостоверность части координат, полученных в логах, вычисление предположительной координаты, соответствующей блоку, происходит при помощи статистических методов. 
-\subsection{hh-инвариант}
-В базовом блоке определен hh-инвариант - вектор весов при соответствующих id.
+%  К каждому базовому блоку методом коллаборативной фильтрации привяжем координаты. Поскольку анализ данных показывает недостоверность части координат, полученных в логах, вычисление предположительной координаты, соответствующей блоку, происходит при помощи статистических методов. 
+% \subsection{hh-инвариант}
+% В базовом блоке определен hh-инвариант - вектор весов при соответствующих id.
 
-Для объединения 2-х блоков hh-инвариант определен, как сумма hh-инвариантов соответствующих блоков.
+% Для объединения 2-х блоков hh-инвариант определен, как сумма hh-инвариантов соответствующих блоков.
 
- При суммировании поле с отсутствующим id добавляется со значением 0. Суммирование происходит покомпонентно, как в случае сложения векторов.
-\begin{definition}
-Инвариант базового блока определен следующим образом:
-\begin{enumerate}
-  \item Пробегаемся по множеству логов - если id присутсвует в логе, увеличиваем значение соответствующей координаты инварианта на 1. Если поле id отсутствует в инварианте - добавляем его.
-  \item Если id в логе не определено - добавляем к значениям инварианта значения, полученные в результате статистического анализа полей лога, что определены.
-  \end{enumerate}
+%  При суммировании поле с отсутствующим id добавляется со значением 0. Суммирование происходит покомпонентно, как в случае сложения векторов.
+% \begin{definition}
+% Инвариант базового блока определен следующим образом:
+% \begin{enumerate}
+%   \item Пробегаемся по множеству логов - если id присутсвует в логе, увеличиваем значение соответствующей координаты инварианта на 1. Если поле id отсутствует в инварианте - добавляем его.
+%   \item Если id в логе не определено - добавляем к значениям инварианта значения, полученные в результате статистического анализа полей лога, что определены.
+%   \end{enumerate}
 
-\end{definition}
+% \end{definition}
 
-\subsection{Принадлежность ip-блоков к одному household}
-На множестве пар ip блоков введем коэффициент связи принадлежности к одному household, определенный, как коэффициент корреляции hh-инвариантов данных блоков.
-$$hh\_LLW (Block_1, Block_2) = \frac{\sum\limits_{X = pr_i(hh\_inv_1), Y = pr_i(hh\_inv_2)}(X-\bar{X})(Y-\bar{Y})}{\sqrt{\sum\limits_{X = pr_i(hh\_inv_1)} (X-\bar{X})^2\sum\limits_{Y = pr_i(hh\_inv_2)} (Y-\bar{Y})^2}}$$
- Чем ближе данный коэффициент к еденице, тем больше вероятность того, что данные ip-блоки соответсвуют одному household (функция $hh\_LLW$)
+% \subsection{Принадлежность ip-блоков к одному household}
+% На множестве пар ip блоков введем коэффициент связи принадлежности к одному household, определенный, как коэффициент корреляции hh-инвариантов данных блоков.
+% $$hh\_LLW (Block_1, Block_2) = \frac{\sum\limits_{X = pr_i(hh\_inv_1), Y = pr_i(hh\_inv_2)}(X-\bar{X})(Y-\bar{Y})}{\sqrt{\sum\limits_{X = pr_i(hh\_inv_1)} (X-\bar{X})^2\sum\limits_{Y = pr_i(hh\_inv_2)} (Y-\bar{Y})^2}}$$
+%  Чем ближе данный коэффициент к еденице, тем больше вероятность того, что данные ip-блоки соответсвуют одному household (функция $hh\_LLW$)
 
-\subsection{Идентификация id}
-По построению идентификация id лога с данным ip происходит по hh-инварианту. 
+% \subsection{Замена коэффициента корелляции}
+% Пусть даны два вектора $\vec{v_1}$ и $\vec{v_2}$, представляющие id инварианты.
+% Шаг первый - приведем данную пару к паре векторов $\vec{v_1}'$ и $\vec{v_2}'$ одинаковой длины.
+% Каждый из полученных векторов нормализируем относительно вектора $(1, 1, \dots, 1)$
 
-Вероятность id с номером i при прявязки данного лога по ip к блоку Block вычисляется по следующей формуле:
-$$P(id) = \frac{pr_i(inv\_Block)}{\sum\limits_k pr_k(inv\_Block)}$$
+% Алгоритм нормализации:
 
-\section{Имплементация алгоритма}
+% Для вектора $\vec{v} = (x_1,x_2,\dots,x_n)$ найдем минимум функции 
+% $$f_{(x_1,x_2,\dots,x_n)}(\alpha)= |\alpha x_1 - 1|+\dots +|\alpha x_n - 1|$$
+% Минимум данной функции будет находится в одной из точек:
+% $$\{\frac{1}{x_i}| 1 \leqslant i \leqslant n \cup  x_i \neq 0\}$$
+% Обозначим его как $\alpha_{min}(\vec{v})$.
+
+% Определим коэффициент отличия двух векторов $\vec{v_1}=(x_1,\dots,x_n)$ и $\vec{v_1}=(x_1,\dots,x_n)$ следующим образом 
+% $$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\alpha_{min}(\vec{v_1})x_i - \alpha_{min}(\vec{v_2})y_i| }{n}$$.
+
+% Вектора с коэффициентом отличия близким к 0 - похожи.
+
+\subsection{Стабилизация координат ip-блока}
+
+На вход подается список координат с временем захвата лога, на выход - результирующая координата.
+ 
+Общий принцип - при исследовании сходимости. Важно не общее расположение точек, а центры группировки.
+
+Алгоритм (1-й шаг)
+
+\begin{algorithmic}[1] 
+\STATE $\rho_{min} =\{ \min \rho (x_i, x_j) |0\leqslant i,j \leqslant n \}$ 
+\STATE $\rho_{max} = \{ \max \rho (x_i, x_j) | i,j \leqslant n \}$
+\STATE $t=0$ 
+\WHILE{ $ \rho_{max} - t*\rho_{min} > 0 $ }
+ \FOR{ ( $i = 1; i \leqslant n; i++$) }
+ \STATE $\alpha_t(x_i) = \mathbf{card}(\{ x_j| \rho (x_i, x_j) \leqslant \rho_{max} - t*\rho_{min}, 0\leqslant j \leqslant n \})$ 
+ \ENDFOR
+\STATE $t++$
+\ENDWHILE
+
+После первого шага агоритма с каждой точкой $x_i$ связана последовательность
+ $$\alpha(x_i) = (\alpha_1(x_i),\alpha_2(x_i),\dots,\alpha_n(x_i)). $$
+
+  Выберем из всех $\alpha(x_i)$ максимальный. Сравнение производится при использовании лексикографического порядка, вначале сравниваем последнии координаты. Если максимумов несколько, выбираем самый последний по времени.
+
+\end{algorithmic}
+
+
+% \subsection{Идентификация id}
+% По построению идентификация id лога с данным ip происходит по hh-инварианту. 
+
+% Вероятность id с номером i при привязке данного лога по ip к блоку Block вычисляется по следующей формуле:
+% $$P(id) = \frac{pr_i(inv\_Block)}{\sum\limits_k pr_k(inv\_Block)}$$
+
+% \newpage
+%\section{Имплементация алгоритма}
 % \begin{algorithmic}[1] 
-% \STATE SELECT * FROM data ORDER BY ip, time
+% \STATE 
+% \begin{verbatim}
+% SELECT * FROM access_log 
+%                 WHERE lat IS NOT NULL 
+%                              AND long IS NOT NULL 
+%                              AND homebiz-type != "business" 
+%                              AND source = 'lls' 
+%                  ORDER BY ip, time
+% \end{verbatim}  
 % \STATE  $cin \gg line$
 % \STATE  $compIP \gets currentIP \gets line.ip$
 % \STATE  $tempCoord \gets line.coord$
@@ -209,27 +263,89 @@ $$P(id) = \frac{pr_i(inv\_Block)}{\sum\limits_k pr_k(inv\_Block)}$$
 % \end{algorithmic}
 % \vspace{2em}
 
-output table or hash output - {\sl key} ip,{\sl value} time array
+% \begin{algorithmic}[1] 
+% \STATE 
+% \begin{verbatim}
+% SELECT * FROM access_log 
+%                 WHERE lat IS NOT NULL 
+%                              AND long IS NOT NULL 
+%                              AND homebiz-type != "business" 
+%                              AND source = 'lls' 
+%                  ORDER BY ip, time
+% \end{verbatim}  
+% \STATE  i = 0
+% %\WHILE{ (\NOT end of data) }
+% \STATE \label{begin} $cin \gg line$,
+
+% new  {\bf record}
+% \STATE   $currentIP \gets  line.ip,$
+ 
+%  $ blockCoord \gets  line.coord$ 
+% \STATE  push to resultBase  {\bf record} with
+
+%  $record.ip \gets  line.ip,$
+
+%  $ record.coord \gets  line.coord,$
+
+%  $ record.time\_begin \gets  line.time,$
+
+%  $ record.group\_id \gets  i$
+% \STATE $i++$ 
+% \STATE $cin \gg line$
+%  \IF  { $line.ip = currentIP$}  \label{ifip}
+% \IF  { $line.coord  \stackrel{ CoordAccuracy}{ \simeq } currentCoord$ } 
+% \STATE goto \ref{ifip}
+% \ELSE   
+% \STATE goto \ref{next}
+% \ENDIF 
+% \STATE storage.clear()
+% \ELSE  
+% \STATE $record.time\_end \gets previousTime $  
+% \STATE goto \ref{begin}
+% \ENDIF 
+% \STATE \label{next} $cin \gg line$
+% \IF  { $line.time  \stackrel{ TimeAccuracy}{ \simeq } previousTime$ } 
+% \STATE storage.push(line)
+
+% goto \ref{ifip}
+% \ELSE   
+% \STATE goto \ref{next1}
+% \ENDIF 
+% \STATE \label{next1} do the same with storage
+% %\ENDWHILE
+  
+% \end{algorithmic}
+% \vspace{2em}
+
+%output table or hash output - {\sl key} ip,{\sl value} time array
 
 
 
-\begin{algorithm}[H]
- \KwData{logs base}
- \KwResult{Scheme of common grous on logs' set}
-  SELECT * FROM data WHERE data.coord IS NOT NULL ORDER BY ip, time\;
- \While{not end of data}{
-  $cin \gg line$\;
-  $compIP \gets currentIP \gets line.ip$\;
-  $tempCoord \gets line.coord$\;
-  \eIf{$compIP = currentIP$}{
-   Proc1\;
-   }{
-   currentIP = line.ip\;
-   Proc2\;
-  }
- }
- \caption{Group logs algorithm}
-\end{algorithm}
+% \begin{algorithm}[H]
+%  \KwData{logs base}
+%  \KwResult{Scheme of common grous on logs' set}
+% \begin{verbatim}
+% SELECT * FROM access_log 
+%                 WHERE lat IS NOT NULL 
+%                              AND long IS NOT NULL 
+%                              AND homebiz-type != "business" 
+%                              AND source = 'lls' 
+%                  ORDER BY ip, time
+% \end{verbatim}
+ 
+%  \While{not end of data}{
+%   $cin \gg line$\;
+%   $compIP \gets currentIP \gets line.ip$\;
+%   $tempCoord \gets line.coord$\;
+%   \eIf{$compIP = currentIP$}{
+%    Proc1\;
+%    }{
+%    currentIP = line.ip\;
+%    Proc2\;
+%   }
+%  }
+%  \caption{Group logs algorithm}
+% \end{algorithm}
 
 
 

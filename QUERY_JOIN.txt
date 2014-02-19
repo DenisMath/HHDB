@@ -1,0 +1,12 @@
+SELECT BIDSS_NULL.bidss_device_id, BIDSS_NULL.count_null, BIDSS_NOT_NULL.count_not_null
+FROM (SELECT bidss_device_id, COUNT(*) AS count_null
+      FROM  [HouseholdIQ.hhDB] 
+      WHERE bidss_user_lat IS NULL
+      GROUP BY bidss_device_id) AS BIDSS_NULL
+JOIN EACH (SELECT bidss_device_id, COUNT(*) AS count_not_null
+          FROM  [HouseholdIQ.hhDB] 
+          WHERE bidss_user_lat IS NOT NULL
+          GROUP BY bidss_device_id) AS BIDSS_NOT_NULL ON 
+BIDSS_NOT_NULL.bidss_device_id = BIDSS_NULL.bidss_device_id
+
+LIMIT 1000;

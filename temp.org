@@ -13,3 +13,17 @@
 Есть предыдущая координата, текущая отличается. Если по времени отличается от предыдущей меньше, чем на accuracyTime, то берем следующий лог и т.д. Изменения происходят в следующих двух случаях - если координата вернулась к исходному значению, тогда запускается общая схема.
 Если координата не равна исходному значению и отличается от зафиксированной на величину, большую, чем accuracyTime, то фиксированная точка считается концом ip-блока. Следующий за ним лог считается началом нового и алгоритм повторяется. 
 
+Первый уровень фильтрации - описать.
+
+SELECT * FROM access_log WHERE lat IS NOT NULL AND long is not null and homebiz-type != "business" AND source = 'lls' ORDER BY ip, time
+
+resultBase = (ip, time_begin, time_end, coord, dev_id_key, group_id )
+Алгоритм
+Этап 1 - создание ip-блоков
+0. i = 0
+1. Читаем линию, currentIP = line.ip, blockCoord = line.coord,  записываем в resultBase новую линию с ip = line.ip, coord = line.coord, time_begin = line.time, group_id = i, i++
+2. Читаем линию, если line.ip == currentIP, то( если координаты currentCoord и line.coord близки (функция equalCoord с параметром CoordAccuracy), то time_end = line.time, заново шаг 2. Если нет, шаг 3.), если нет, то
+2a. Читаем следующую линию, если координаты blockCoord и line.coord близки (функция equalCoord с параметром CoordAccuracy), то storage.clear(), time_end = line.time, заново шаг 2. Если нет, шаг 3.
+3. Cравниваем близость по времени (фукция timeBound с параметром TimeAccuracy). Если логи близкие по времени, то загружаем line в storage и переходим к шагу 2a. Если нет, то шаг 4.
+4. 
+5. 

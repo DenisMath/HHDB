@@ -1,0 +1,33 @@
+SELECT BIDSS_NULL.bidss_device_id as dev_id, floor((BIDSS_NOT_NULL.count_not_null/(BIDSS_NULL.count_null+BIDSS_NOT_NULL.count_not_null))*100) as captured
+  FROM (SELECT bidss_device_id, COUNT(*) AS count_null
+      FROM  [HouseholdIQ.hhDB] 
+      WHERE bidss_user_lat IS NULL
+      GROUP BY bidss_device_id) AS BIDSS_NULL
+    JOIN EACH (SELECT bidss_device_id, COUNT(*) AS count_not_null
+          FROM  [HouseholdIQ.hhDB] 
+          WHERE bidss_user_lat IS NOT NULL
+          GROUP BY bidss_device_id) AS BIDSS_NOT_NULL ON 
+    BIDSS_NOT_NULL.bidss_device_id = BIDSS_NULL.bidss_device_id
+    
+   GROUP BY capture_bigger_than 
+   ORDER BY capture_bigger_than DESC
+   LIMIT 1000;
+
+SELECT 10*floor(captured/10) as capture_bigger_than, floor(100*COUNT(*)/TOTAL.sum) as percent FROM (
+SELECT BIDSS_NULL.bidss_device_id as dev_id, floor((BIDSS_NOT_NULL.count_not_null/(BIDSS_NULL.count_null+BIDSS_NOT_NULL.count_not_null))*100) as captured
+  FROM (SELECT bidss_device_id, COUNT(*) AS count_null
+      FROM  [HouseholdIQ.hhDB] 
+      WHERE bidss_user_lat IS NULL
+      GROUP BY bidss_device_id) AS BIDSS_NULL
+    JOIN EACH (SELECT bidss_device_id, COUNT(*) AS count_not_null
+          FROM  [HouseholdIQ.hhDB] 
+          WHERE bidss_user_lat IS NOT NULL
+          GROUP BY bidss_device_id) AS BIDSS_NOT_NULL ON 
+    BIDSS_NOT_NULL.bidss_device_id = BIDSS_NULL.bidss_device_id
+    ), (select SUM(captured) as sum from BIDSS_NULL ) as TOTAL
+   GROUP BY capture_bigger_than 
+   ORDER BY capture_bigger_than DESC
+   
+   
+
+LIMIT 1000;

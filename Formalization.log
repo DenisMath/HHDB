@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.18)  19 FEB 2014 15:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.12.18)  23 JAN 2014 12:28
 entering extended mode
-**\input MathModel.tex
-(d:\GitHub\HHDB\MathModel.tex
+**\input Formalization.tex
+(d:\GitHub\HHDB\Formalization.tex
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
@@ -205,7 +205,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
@@ -228,98 +228,55 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks29
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\c@ALC@unique=\count112
-\c@ALC@line=\count113
-\c@ALC@rem=\count114
-\c@ALC@depth=\count115
-\ALC@tlm=\skip51
-\algorithmicindent=\skip52
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
-Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count116
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
-Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
-Package: relsize 2003/07/04 ver 3.1
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-********************************************************
-Package `algorithm2e' Release 5.0 -- january 06 2013 --
-- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
-- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
-subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
-- Author: Christophe Fiorio (cfiorio@um2.fr)
-********************************************************
-\skiptotal=\skip53
-\skiplinenumber=\skip54
-\skiprule=\skip55
-\skiphlne=\skip56
-\skiptext=\skip57
-\skiplength=\skip58
-\algomargin=\skip59
-\skipalgocfslide=\skip60
-\algowidth=\dimen129
-\inoutsize=\dimen130
-\inoutindent=\dimen131
-\interspacetitleruled=\dimen132
-\interspacealgoruled=\dimen133
-\interspacetitleboxruled=\dimen134
-\algocf@inoutbox=\box54
-\algocf@inputbox=\box55
-\AlCapSkip=\skip61
-\AlCapHSkip=\skip62
-\algoskipindent=\skip63
-\algocf@nlbox=\box56
-\algocf@hangingbox=\box57
-\algocf@untilbox=\box58
-\algocf@skipuntil=\skip64
-\algocf@capbox=\box59
-\algoheightruledefault=\skip65
-\algoheightrule=\skip66
-\algotitleheightruledefault=\skip67
-\algotitleheightrule=\skip68
-\c@algocfline=\count117
-\c@algocfproc=\count118
-\c@algocf=\count119
-\algocf@algoframe=\box60
-\algocf@algobox=\box61
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen129
+\Gin@req@width=\dimen130
 )
-\c@theorem=\count120
-\c@lemma=\count121
-\c@corollary=\count122
-\c@remark=\count123
-\c@definition=\count124
-\c@example=\count125
-\c@hyp=\count126
-\c@question=\count127
- (d:\GitHub\HHDB\MathModel.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+\c@theorem=\count112
+\c@lemma=\count113
+\c@corollary=\count114
+\c@remark=\count115
+\c@definition=\count116
+\c@example=\count117
+\c@hyp=\count118
+\c@question=\count119
+
+(d:\GitHub\HHDB\Formalization.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -351,60 +308,114 @@ LaTeX Font Info:    ... okay on input line 28.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (17.21233pt too wide) in paragraph at lines 208--209
-[]\T2A/cmr/m/n/10.95 На вход подается список координат с временем захвата лога,
- на выход - результирующая
+Overfull \hbox (38.85902pt too wide) in paragraph at lines 27--28
+\T2A/cmr/m/n/10.95 неопределенности данного множества, а, следовательно, усложн
+ение модели формалистикой
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 215.
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 215.
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Overfull \hbox (10.07321pt too wide) in paragraph at lines 228--229
-[][]\T2A/cmr/m/n/10.95 Выберем из всех $\OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95
- (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )$ \T2A/cmr/m/n/10.95 максимальный.
- Сравнение производится при использовании
+Overfull \hbox (31.82355pt too wide) in paragraph at lines 42--43
+\T2A/cmr/m/n/10.95 получить $\OML/cmm/m/it/10.95 device[]id$ \T2A/cmr/m/n/10.95
+ при помощи анализа косвенных данных, предоставляемых множеством
  []
 
 
-Overfull \hbox (1.13037pt too wide) in paragraph at lines 228--229
-\T2A/cmr/m/n/10.95 лексикографического порядка, вначале сравниваем последнии ко
-ординаты. Если
+Overfull \hbox (4.96614pt too wide) in paragraph at lines 46--47
+[][]\T2A/cmr/m/n/10.95 Каждый лог связан с некоторым местом( географическими ко
+ординатами). Место
+ []
+
+
+Overfull \hbox (12.16261pt too wide) in paragraph at lines 49--52
+\T2A/cmr/m/n/10.95 географических координат. При высоком коэффициенте связи лог
+и предположительно
+ []
+
+
+Overfull \hbox (22.74811pt too wide) in paragraph at lines 53--54
+\T2A/cmr/bx/n/10.95 Пример 1.0.1. []\T2A/cmr/m/it/10.95 Фиксируется некоторое б
+азовое множество логов, задающих кластеры.
+ []
+
+
+Overfull \hbox (18.24857pt too wide) in paragraph at lines 53--54
+\T2A/cmr/m/it/10.95 Например базовое множество можно определить, как множество 
+логов с известными
+ []
+
+
+Overfull \hbox (17.96198pt too wide) in paragraph at lines 53--54
+\T2A/cmr/m/it/10.95 близким к административным центрам ). Каждая точка(лог) отн
+осится к кластеру,
+ []
+
+
+Overfull \hbox (17.71127pt too wide) in paragraph at lines 53--54
+\T2A/cmr/m/it/10.95 который порожден базовой точкой с наибольшей связью для дан
+ной точки, в сравнении
+ []
+
+
+Overfull \hbox (19.81995pt too wide) in paragraph at lines 53--54
+\T2A/cmr/m/it/10.95 точки с кластером в случае конфликтов( одинаковая коэффицие
+нт связи с несколькими
+ []
+
+
+Overfull \hbox (29.9514pt too wide) in paragraph at lines 57--59
+[]\T2A/cmr/m/n/10.95 Данная функция возвращает коэффициент связи между двумя ло
+гами по принадлежности
+ []
+
+
+Overfull \hbox (27.923pt too wide) in paragraph at lines 61--62
+\T2A/cmr/bx/n/10.95 Замечание 1.0.1. []\T2A/cmr/m/it/10.95 Очевидно кластеризац
+ия, полученная при помощи функции $\OML/cmm/m/it/10.95 hh[]LLW$\T2A/cmr/m/it/10
+.95 ,
+ []
+
+
+Overfull \hbox (11.20941pt too wide) in paragraph at lines 61--62
+\T2A/cmr/m/it/10.95 должна быть близка к некоторому разбиение кластеризации, по
+лученной при помощи
+ []
+
+
+Overfull \hbox (11.15872pt too wide) in paragraph at lines 61--62
+\T2A/cmr/m/it/10.95 функции $\OML/cmm/m/it/10.95 koord[]LLW$\T2A/cmr/m/it/10.95
+ . То есть последовательное использование данных двух функций
+ []
+
+
+Overfull \hbox (39.73979pt too wide) in paragraph at lines 61--62
+\T2A/cmr/m/it/10.95 задает некоторую 2-уровневую классификацию на множестве лог
+ов. Однако использование
+ []
+
+
+Overfull \hbox (24.47607pt too wide) in paragraph at lines 61--62
+\T2A/cmr/m/it/10.95 различных подходов при реализации данных функций может прив
+ести к существенному
  []
 
 [1
 
-{C:/Documents and Settings/All Users/Application Data/MiKTeX/2.9/pdftex/config/
-pdftex.map}] (d:\GitHub\HHDB\MathModel.aux) ) 
+] [2] (d:\GitHub\HHDB\Formalization.aux) ) 
 Here is how much of TeX's memory you used:
- 4257 strings out of 494045
- 54236 string characters out of 3148320
- 137622 words of memory out of 3000000
- 7504 multiletter control sequences out of 15000+200000
- 13275 words of font info for 40 fonts, out of 3000000 for 9000
+ 3013 strings out of 494046
+ 36702 string characters out of 3148343
+ 98945 words of memory out of 3000000
+ 6263 multiletter control sequences out of 15000+200000
+ 15777 words of font info for 41 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,4n,24p,575b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Documents and Settings\All Us
-ers\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1095.pk> <
-C:\Documents and Settings\All Users\Application Data\MiKTeX\2.9\fonts\pk\ljfour
-\lh\lh-t2a\dpi600\larm0900.pk> <C:\Documents and Settings\All Users\Application
- Data\MiKTeX\2.9\fonts\pk\ljfour\unknown\unknown\dpi600\larm1095.pk> <C:\Docume
-nts and Settings\All Users\Application Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2
-a\dpi600\labx1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on MathModel.pdf (1 page, 96223 bytes).
-PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 27i,7n,24p,595b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+Output written on Formalization.dvi (2 pages, 6772 bytes).
