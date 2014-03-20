@@ -29,26 +29,46 @@
 \begin{table}[H]
 \caption{\label{tab:canonsummary}Data Scientist consultancy service for period 01.02.14-31.02.14}
 \begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|}
 \hline
-\bf Task name & \bf Duration in office & Duration out of office\\
+\bf Task name & \bf Duration  \\
 \hline
 \hline
-Function to compare id invariants & 6h & \\
+Function to compare id invariants & 16h  \\
 \hline
-Algorithm schema for the math model & 24h & \\
+Algorithm schema for the math model & 28h  \\
 \hline
+Support for algorithm's implementation & 12h  \\
+\hline
+Improve household building with location strenght & 6h  \\
+\hline
+Function improvements of households comparison & 2h  \\
+\hline
+Validate and analyze built household & 32h  \\
+\hline
+Build reference household db with non-formal methods & 28h  \\
+\hline
+Discover alien blocks against household reference db & 8h  \\
+\hline
+Empirical determination of the differences coefficient &  \\
 
-\multicolumn{3}{c}{} \\
+for the comparison function of ip-blocks, & 13h \\
+
+TimeAccuracy coefficient and DistanceAccuracy coefficient &   \\
 \hline
-\bf Total hours  & &  \\
+\multicolumn{2}{c}{} \\
 \hline
-%\bf Total sum  & {\bf $108h\times 28\$/h = 3024\$ $} &  \\
-\bf Total sum  &  &  \\
+\bf Total hours  &   \\
+\hline
+%\bf Total sum  & {\bf $108h\times 28\$/h = 3024\$ $}   \\
+\bf Total sum  &    \\
 \hline
 
 \end{tabular}
 \end{center}
 \end{table} 
+
+
+
 
 \end{document}

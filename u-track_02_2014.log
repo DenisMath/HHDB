@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.12.18)  11 MAR 2014 20:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.18)  11 MAR 2014 21:48
 entering extended mode
 **\input u-track_02_2014.tex
 (d:\GitHub\HHDB\u-track_02_2014.tex
@@ -205,7 +205,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
@@ -317,9 +317,9 @@ LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: dvips
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: dvips
+* driver: pdftex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -358,15 +358,24 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [1]
+) [1{C:/Documents and Settings/All Users/Application Data/MiKTeX/2.9/pdftex/con
+fig/pdftex.map}]
 (d:\GitHub\HHDB\u-track_02_2014.aux) ) 
 Here is how much of TeX's memory you used:
- 4212 strings out of 494046
- 53911 string characters out of 3148343
- 137664 words of memory out of 3000000
+ 4213 strings out of 494045
+ 53921 string characters out of 3148320
+ 137630 words of memory out of 3000000
  7466 multiletter control sequences out of 15000+200000
  9922 words of font info for 34 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  27i,8n,24p,239b,279s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Documents and Settings\All Users\App
+lication Data\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1095.pk> <C:\Docu
+ments and Settings\All Users\Application Data\MiKTeX\2.9\fonts\pk\ljfour\unknow
+n\unknown\dpi600\larm1095.pk>
+Output written on u-track_02_2014.pdf (1 page, 23395 bytes).
+PDF statistics:
+ 78 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on u-track_02_2014.dvi (1 page, 2224 bytes).

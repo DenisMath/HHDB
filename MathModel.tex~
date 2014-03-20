@@ -185,23 +185,23 @@
 % $$hh\_LLW (Block_1, Block_2) = \frac{\sum\limits_{X = pr_i(hh\_inv_1), Y = pr_i(hh\_inv_2)}(X-\bar{X})(Y-\bar{Y})}{\sqrt{\sum\limits_{X = pr_i(hh\_inv_1)} (X-\bar{X})^2\sum\limits_{Y = pr_i(hh\_inv_2)} (Y-\bar{Y})^2}}$$
 %  Чем ближе данный коэффициент к еденице, тем больше вероятность того, что данные ip-блоки соответсвуют одному household (функция $hh\_LLW$)
 
-\subsection{Замена коэффициента корелляции}
-Пусть даны два вектора $\vec{v_1}$ и $\vec{v_2}$, представляющие id инварианты.
-Шаг первый - приведем данную пару к паре векторов $\vec{v_1}'$ и $\vec{v_2}'$ одинаковой длины.
-Каждый из полученных векторов нормализируем относительно вектора $(1, 1, \dots, 1)$
+% \subsection{Замена коэффициента корелляции}
+% Пусть даны два вектора $\vec{v_1}$ и $\vec{v_2}$, представляющие id инварианты.
+% Шаг первый - приведем данную пару к паре векторов $\vec{v_1}'$ и $\vec{v_2}'$ одинаковой длины.
+% Каждый из полученных векторов нормализируем относительно вектора $(1, 1, \dots, 1)$
 
-Алгоритм нормализации:
+% Алгоритм нормализации:
 
-Для вектора $\vec{v} = (x_1,x_2,\dots,x_n)$ найдем минимум функции 
-$$f_{(x_1,x_2,\dots,x_n)}(\alpha)= |\alpha x_1 - 1|+\dots +|\alpha x_n - 1|$$
-Минимум данной функции будет находится в одной из точек:
-$$\{\frac{1}{x_i}| 1 \leqslant i \leqslant n \cup  x_i \neq 0\}$$
-Обозначим его как $\alpha_{min}(\vec{v})$.
+% Для вектора $\vec{v} = (x_1,x_2,\dots,x_n)$ найдем минимум функции 
+% $$f_{(x_1,x_2,\dots,x_n)}(\alpha)= |\alpha x_1 - 1|+\dots +|\alpha x_n - 1|$$
+% Минимум данной функции будет находится в одной из точек:
+% $$\{\frac{1}{x_i}| 1 \leqslant i \leqslant n \cup  x_i \neq 0\}$$
+% Обозначим его как $\alpha_{min}(\vec{v})$.
 
-Определим коэффициент отличия двух векторов $\vec{v_1}=(x_1,\dots,x_n)$ и $\vec{v_1}=(x_1,\dots,x_n)$ следующим образом 
-$$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\alpha_{min}(\vec{v_1})x_i - \alpha_{min}(\vec{v_2})y_i| }{n}$$.
+% Определим коэффициент отличия двух векторов $\vec{v_1}=(x_1,\dots,x_n)$ и $\vec{v_1}=(x_1,\dots,x_n)$ следующим образом 
+% $$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\alpha_{min}(\vec{v_1})x_i - \alpha_{min}(\vec{v_2})y_i| }{n}$$.
 
-Вектора с коэффициентом отличия близким к 0 - похожи.
+% Вектора с коэффициентом отличия близким к 0 - похожи.
 
 \subsection{Стабилизация координат ip-блока}
 
@@ -221,24 +221,23 @@ $$\mathit{differenceCoeff}(\vec{v_1}, \vec{v_2} ) = \frac{\sum\limits_{i=1}^n |\
  \ENDFOR
 \STATE $t++$
 \ENDWHILE
-\end{algorithmic}
 
 После первого шага агоритма с каждой точкой $x_i$ связана последовательность
  $$\alpha(x_i) = (\alpha_1(x_i),\alpha_2(x_i),\dots,\alpha_n(x_i)). $$
 
   Выберем из всех $\alpha(x_i)$ максимальный. Сравнение производится при использовании лексикографического порядка, вначале сравниваем последнии координаты. Если максимумов несколько, выбираем самый последний по времени.
 
+\end{algorithmic}
 
 
+% \subsection{Идентификация id}
+% По построению идентификация id лога с данным ip происходит по hh-инварианту. 
 
-\subsection{Идентификация id}
-По построению идентификация id лога с данным ip происходит по hh-инварианту. 
+% Вероятность id с номером i при привязке данного лога по ip к блоку Block вычисляется по следующей формуле:
+% $$P(id) = \frac{pr_i(inv\_Block)}{\sum\limits_k pr_k(inv\_Block)}$$
 
-Вероятность id с номером i при привязке данного лога по ip к блоку Block вычисляется по следующей формуле:
-$$P(id) = \frac{pr_i(inv\_Block)}{\sum\limits_k pr_k(inv\_Block)}$$
-
-\newpage
-\section{Имплементация алгоритма}
+% \newpage
+%\section{Имплементация алгоритма}
 % \begin{algorithmic}[1] 
 % \STATE 
 % \begin{verbatim}
@@ -260,62 +259,62 @@ $$P(id) = \frac{pr_i(inv\_Block)}{\sum\limits_k pr_k(inv\_Block)}$$
 % \STATE
 % \ENDIF   
 % \ENDWHILE
-%   \IF {\(  \)}
-%  \end{algorithmic}
+%   %\IF {\(  \)}
+% \end{algorithmic}
 % \vspace{2em}
 
-\begin{algorithmic}[1] 
-\STATE 
-\begin{verbatim}
-SELECT * FROM access_log 
-                WHERE lat IS NOT NULL 
-                             AND long IS NOT NULL 
-                             AND homebiz-type != "business" 
-                             AND source = 'lls' 
-                 ORDER BY ip, time
-\end{verbatim}  
-\STATE  i = 0
-%\WHILE{ (\NOT end of data) }
-\STATE \label{begin} $cin \gg line$,
+% \begin{algorithmic}[1] 
+% \STATE 
+% \begin{verbatim}
+% SELECT * FROM access_log 
+%                 WHERE lat IS NOT NULL 
+%                              AND long IS NOT NULL 
+%                              AND homebiz-type != "business" 
+%                              AND source = 'lls' 
+%                  ORDER BY ip, time
+% \end{verbatim}  
+% \STATE  i = 0
+% %\WHILE{ (\NOT end of data) }
+% \STATE \label{begin} $cin \gg line$,
 
-new  {\bf record}
-\STATE   $currentIP \gets  line.ip,$
+% new  {\bf record}
+% \STATE   $currentIP \gets  line.ip,$
  
- $ blockCoord \gets  line.coord$ 
-\STATE  push to resultBase  {\bf record} with
+%  $ blockCoord \gets  line.coord$ 
+% \STATE  push to resultBase  {\bf record} with
 
- $record.ip \gets  line.ip,$
+%  $record.ip \gets  line.ip,$
 
- $ record.coord \gets  line.coord,$
+%  $ record.coord \gets  line.coord,$
 
- $ record.time\_begin \gets  line.time,$
+%  $ record.time\_begin \gets  line.time,$
 
- $ record.group\_id \gets  i$
-\STATE $i++$ 
-\STATE $cin \gg line$
- \IF  { $line.ip = currentIP$}  \label{ifip}
-\IF  { $line.coord  \stackrel{ CoordAccuracy}{ \simeq } currentCoord$ } 
-\STATE goto \ref{ifip}
-\ELSE   
-\STATE goto \ref{next}
-\ENDIF 
-\STATE storage.clear()
-\ELSE  
-\STATE $record.time\_end \gets previousTime $  
-\STATE goto \ref{begin}
-\ENDIF 
-\STATE \label{next} $cin \gg line$
-\IF  { $line.time  \stackrel{ TimeAccuracy}{ \simeq } previousTime$ } 
-\STATE storage.push(line)
+%  $ record.group\_id \gets  i$
+% \STATE $i++$ 
+% \STATE $cin \gg line$
+%  \IF  { $line.ip = currentIP$}  \label{ifip}
+% \IF  { $line.coord  \stackrel{ CoordAccuracy}{ \simeq } currentCoord$ } 
+% \STATE goto \ref{ifip}
+% \ELSE   
+% \STATE goto \ref{next}
+% \ENDIF 
+% \STATE storage.clear()
+% \ELSE  
+% \STATE $record.time\_end \gets previousTime $  
+% \STATE goto \ref{begin}
+% \ENDIF 
+% \STATE \label{next} $cin \gg line$
+% \IF  { $line.time  \stackrel{ TimeAccuracy}{ \simeq } previousTime$ } 
+% \STATE storage.push(line)
 
-\STATE goto \ref{ifip}
-\ELSE   
-\STATE goto \ref{next1}
-\ENDIF 
-\STATE \label{next1} do the same with storage
-%\ENDWHILE
+% goto \ref{ifip}
+% \ELSE   
+% \STATE goto \ref{next1}
+% \ENDIF 
+% \STATE \label{next1} do the same with storage
+% %\ENDWHILE
   
-\end{algorithmic}
+% \end{algorithmic}
 % \vspace{2em}
 
 %output table or hash output - {\sl key} ip,{\sl value} time array
